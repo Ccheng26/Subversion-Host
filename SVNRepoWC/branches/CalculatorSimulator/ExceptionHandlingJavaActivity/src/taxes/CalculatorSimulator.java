@@ -13,7 +13,7 @@ public class CalculatorSimulator {
 		}
 		//Test Case 3
 		if(empC.calculateTax("Jack", true, 55000)!=0) {
-		System.out.println("Tax amount is " + empC.calculateTax("Jack", true, 55000));
+		System.out.println("Tax amount is " + ()empC.calculateTax("Jack", true, 55000));
 		}
 		//Test Case 4
 		if(empC.calculateTax("", true, 30000)!=0) {
