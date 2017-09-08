@@ -3,6 +3,7 @@ package taxes;
 public class TaxCalculator {
 	double taxAmount;
 	double calculateTax(String empName, boolean isIndian, double empSal) {
+		this.taxAmount=0;
 		if(empName==""||empName==null) {
 			try {
 				throw new EmployeeNameInvalidException();
@@ -15,7 +16,7 @@ public class TaxCalculator {
 			} catch(CountryNotValidException e) {
 				e.printStackTrace();
 			}
-		}else if (empSal>100000 && isIndian==true) {
+		} else if (empSal>100000 && isIndian==true) {
 			taxAmount= empSal*(8/(double)100);
 		} else if(empSal<=100000 && empSal>50000 && isIndian==true) {
 			taxAmount= empSal*(6/(double)100);
@@ -23,7 +24,7 @@ public class TaxCalculator {
 			taxAmount= empSal*(5/(double)100);
 		} else if(empSal<=30000 && empSal>10000 && isIndian==true) {
 			taxAmount= empSal*(4/(double)100);
-		} else {
+		} else if (empSal<10000) {
 			try {
 				throw new TaxNotEligibleException(empSal);
 			} catch (TaxNotEligibleException e) {
