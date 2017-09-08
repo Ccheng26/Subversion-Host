@@ -1,7 +1,6 @@
 package taxes;
 
 public class CountryNotValidException extends Exception {
-	String country;
 	CountryNotValidException(){
 	}
 	public String toString() {
